@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.alerts {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  padding: 15px;
+  width: auto;
+}
+
+.alerts .alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 225px;
+  min-height: 80px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 10px 46px -21px rgba(0, 0, 0, 0.75);
+          box-shadow: 0 10px 46px -21px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0, 0, 0.3, 1);
+  margin-bottom: 20px;
+  -webkit-animation: name duration timing-function delay iteration-count direction fill-mode;
+          animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.alerts .alert:hover {
+  -webkit-box-shadow: 0px 10px 60px -21px rgba(0, 0, 0, 0.8);
+          box-shadow: 0px 10px 60px -21px rgba(0, 0, 0, 0.8);
+}
+
+.alerts .alert:last-child {
+  margin-bottom: 0;
+}
+
+.alerts .alert.success {
+  background-color: #ce7777;
+}
+
+.alerts .alert.failed {
+  background-color: #c84346;
+}
+
+.alerts .alert.request {
+  background-color: #67a4c0;
+}
+
+.alerts .alert.wait {
+  background-color: #aebcc2;
+}
+
+.alerts .alert-icon {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0 4px 4px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 26px;
+  color: #FFFFFF;
+}
+
+.alerts .alert-content {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  align-items: center;
+}
+
+.alerts .alert-content .alert-close {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 1em;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.alerts .alert-content .alert-title {
+  font: 22px/1.2 'Acto SemiBold', sans-serif;
+  color: #FFFFFF;
+}
+
+.alerts .alert-content .alert-subtitle {
+  margin-top: 5px;
+  font: 12px/1.2 'Acto Book', sans-serif;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.alerts .alert-content .alert-subtitle .little-list {
+  display: none;
+  list-style-position: inside;
+  padding: 5px 0 0;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.fade {
+  -webkit-animation: fade .4s;
+          animation: fade .4s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+/*# sourceMappingURL=alerts.css.map */

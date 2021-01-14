@@ -1,0 +1,161 @@
+$max-width: 1400px;
+$body-backgroundcolor: #efefef;
+$main-backgroundcolor: #ae3e3e;
+$main-bordercolor: #ce7777;
+
+@mixin MaxWidthContainer {
+    max-width: $max-width;
+    margin: 0 auto;
+    background-color: #ce7777;
+}
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+body { margin: 0; background-color: $body-backgroundcolor }
+
+@import 'components/header';
+@import 'components/menu';
+@import 'components/footer';
+
+
+
+// Contenedor Principal
+.main {
+    @include MaxWidthContainer();
+    display: grid;
+    grid-template-columns: 1fr minmax(100px, 300px);
+    // background-color: #75a781;
+    border: 1px solid $main-bordercolor;
+    border-bottom: 0;
+}
+
+
+// Contenido Principal
+.content {
+    padding: 1.5rem 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    &-title {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 1rem;
+        color: #ffffff;
+    }
+    .container {
+        width: 100%;
+        // background-color: #d3b050;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr minmax(200px, auto);
+        row-gap: 1rem;
+        .content {
+            &-main {
+                // background-color: #68a3bb;
+                padding: 1rem;
+                p {
+                    color: #ffffff;
+                    margin-bottom: 1rem;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    
+                }
+                .img {
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        width: 40rem;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &-img {
+                display: grid;
+                grid-template-columns: 1fr 16rem;
+                grid-template-rows: repeat(3, 8rem);
+                gap: 1rem;
+                padding: 1rem;
+                flex-wrap: wrap;
+                border: 1px solid $main-bordercolor;
+                &-item {
+                    position: relative;
+                    &:hover > p {
+                        text-decoration: underline;
+                    }
+                    &::after {
+                        content: "";
+                        background: linear-gradient(253deg, #00000000 0%, #00000075 100%) 0% 0% no-repeat padding-box;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                    }
+                    p {
+                        padding: .6rem;
+                        
+                        font-size: 1.1rem;
+                        color: #ffffff;
+
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    &.portada {
+                        grid-row: 1 / -1;
+                        p {
+                            top: 70%;
+                            left: 1rem;
+                            right: 20%;
+                            // bottom: 50;
+                            transform: translate(0, -50%);
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .video {
+        text-align: center;
+    }
+}
+
+.content {
+    .container.notice {
+        display: block;
+
+    }
+}
+
+/* Banner */
+.banner {
+    background-color: #b99059;
+    padding: 3rem 1rem;
+    .publicidad {
+        padding: 1rem;
+        background-color: #d6d870;
+        margin-bottom: 1rem;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &.img {
+            width: 100%;
+            padding: 0;
+            background-color: initial;
+        }
+    }
+}

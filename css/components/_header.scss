@@ -1,0 +1,21 @@
+.header {
+    @include MaxWidthContainer();
+    background-color: #555555;
+    padding: 1rem 1rem;
+    width: 100%;
+    overflow: hidden;
+    &__slider {
+        display: inline-flex;
+        width: auto;
+        height: 100%;
+        animation: slider 14s infinite linear;
+        &-item {
+            width: 30rem;
+            flex: 0 0 auto;
+            text-align: center;
+            .title {
+                color: #ffffff;
+            }
+        }
+    }
+}
